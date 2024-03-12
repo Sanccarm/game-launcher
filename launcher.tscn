@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cs02mq6r3y8db"]
+[gd_scene load_steps=10 format=3 uid="uid://cs02mq6r3y8db"]
 
 [ext_resource type="Texture2D" uid="uid://2fit8au56npn" path="res://images/Logo_placehldr.png" id="1_5mprr"]
 [ext_resource type="Texture2D" uid="uid://5l7xw6k31qhr" path="res://images/snake (2).png" id="2_3ckbv"]
+[ext_resource type="Script" path="res://Downloads/downloadsnake.gd" id="3_6ckv5"]
+[ext_resource type="Texture2D" uid="uid://6lci2ffvpdtm" path="res://images/BlackJack.png" id="4_u1ylu"]
+[ext_resource type="Script" path="res://Downloads/downloadblackjack.gd" id="5_8bvs2"]
 
 [sub_resource type="FontFile" id="FontFile_tgi30"]
 cache/0/24/0/ascent = 0.0
@@ -21,6 +24,28 @@ cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_b2e4h"]
 font = SubResource("FontFile_tgi30")
+font_size = 24
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="FontFile" id="FontFile_5rfp6"]
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
+cache/0/24/0/kerning_overrides/24/0 = Vector2(0, 0)
+cache/0/24/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/24/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jg5w8"]
+font = SubResource("FontFile_5rfp6")
 font_size = 24
 outline_size = 5
 outline_color = Color(0, 0, 0, 1)
@@ -89,7 +114,7 @@ size_flags_vertical = 0
 
 [node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/Content/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "Snake!"
+text = "Snake"
 label_settings = SubResource("LabelSettings_b2e4h")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/MarginContainer/VBoxContainer/Content/MarginContainer/HBoxContainer/VBoxContainer"]
@@ -101,3 +126,41 @@ autowrap_mode = 0
 [node name="Button" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/Content/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Download"
+script = ExtResource("3_6ckv5")
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/MarginContainer/VBoxContainer/Content"]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 2.0
+offset_right = 992.0
+offset_bottom = 197.0
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/Content/MarginContainer2"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/MarginContainer/VBoxContainer/Content/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_u1ylu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/Content/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/Content/MarginContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "BlackJack"
+label_settings = SubResource("LabelSettings_jg5w8")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/MarginContainer/VBoxContainer/Content/MarginContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Get close to 21 without going over."
+fit_content = true
+
+[node name="Button" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/Content/MarginContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Download"
+script = ExtResource("5_8bvs2")
