@@ -1,14 +1,34 @@
-[gd_scene load_steps=3 format=3 uid="uid://cs02mq6r3y8db"]
+[gd_scene load_steps=5 format=3 uid="uid://cs02mq6r3y8db"]
 
 [ext_resource type="Texture2D" uid="uid://2fit8au56npn" path="res://images/Logo_placehldr.png" id="1_5mprr"]
+[ext_resource type="Texture2D" uid="uid://5l7xw6k31qhr" path="res://images/snake (2).png" id="2_3ckbv"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d622b"]
+[sub_resource type="FontFile" id="FontFile_tgi30"]
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
+cache/0/24/0/kerning_overrides/24/0 = Vector2(0, 0)
+cache/0/24/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/24/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_b2e4h"]
+font = SubResource("FontFile_tgi30")
+font_size = 24
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Launcher" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 0
+offset_bottom = 324.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -41,8 +61,43 @@ texture = ExtResource("1_5mprr")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Panel" type="Panel" parent="ColorRect/MarginContainer/VBoxContainer"]
-modulate = Color(0, 0.0313726, 0.0235294, 0.811765)
+[node name="Content" type="Panel" parent="ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_d622b")
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/MarginContainer/VBoxContainer/Content"]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 496.0
+offset_bottom = 194.0
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/Content/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/MarginContainer/VBoxContainer/Content/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_3ckbv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/Content/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/Content/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Snake!"
+label_settings = SubResource("LabelSettings_b2e4h")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/MarginContainer/VBoxContainer/Content/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "A classic game of snake."
+fit_content = true
+autowrap_mode = 0
+
+[node name="Button" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/Content/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Download"
