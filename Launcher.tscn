@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://images/Logo_placehldr.png" type="Texture" id=1]
 [ext_resource path="res://images/snake (2).png" type="Texture" id=2]
 [ext_resource path="res://images/BlackJack.png" type="Texture" id=3]
 [ext_resource path="res://scripts/downloadsnake.gd" type="Script" id=4]
+[ext_resource path="res://scripts/downloadblackjack.gd" type="Script" id=5]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0588235, 0.129412, 0.278431, 1 )
@@ -151,5 +152,7 @@ fit_content_height = true
 margin_top = 37.0
 margin_right = 299.0
 margin_bottom = 57.0
+text = "Download"
+script = ExtResource( 5 )
 
 [connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer/Button" to="ColorRect/MarginContainer/VBoxContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer/Button" method="_on_Button_pressed"]
